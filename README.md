@@ -20,4 +20,4 @@ Os dados simulam cenários reais encontrados em concessões de rodovias (ex: sin
 1. Certifique-se de ter o **Node.js** e o **Expo CLI** instalados em sua máquina.
 2. Clone o repositório:
    ```bash
-   git clone <LINK_DO_SEU_REPOSITORIO>
+   git clone <https://github.com/pedrodelneri/Challenge-Sprint.git>
