@@ -25,16 +25,34 @@ export const CadastroScreen: React.FC<CadastroProps> = ({ onSalvar, onVoltar }) 
       <Text style={styles.title}>Mapear Nova Área Crítica</Text>
 
       <Text style={styles.label}>Localização (Rodovia / Km / Sentido)</Text>
-      <TextInput style={styles.input} placeholder="Ex: SP-270, Km 115 Oeste" value={local} onChangeText={setLocal} />
+      <TextInput 
+        style={styles.input} 
+        placeholder="Ex: SP-270, Km 115 Oeste" 
+        value={local} 
+        onChangeText={setLocal} 
+      />
 
       <Text style={styles.label}>Descrição do Estado do Ponto</Text>
-      <TextInput style={[styles.input, styles.textArea]} placeholder="Ex: Mato alto obstruindo canaleta de drenagem." value={descricao} onChangeText={setDescricao} multiline numberOfLines={4} />
+      <TextInput 
+        style={[styles.input, styles.textArea]} 
+        placeholder="Ex: Mato alto obstruindo canaleta de drenagem." 
+        value={descricao} 
+        onChangeText={setDescricao} 
+        multiline 
+        numberOfLines={4} 
+      />
 
       <Text style={styles.label}>Nível de Risco / Urgência</Text>
       <View style={styles.pickerContainer}>
         {(["baixo", "medio", "alto"] as const).map((nivel) => (
-          <TouchableOpacity key={nivel} style={[styles.pickerButton, risco === nivel && styles.pickerSelected]} onPress={() => setRisco(nivel)}>
-            <Text style={[styles.pickerText, risco === nivel && styles.pickerTextSelected]}>{nivel.toUpperCase()}</Text>
+          <TouchableOpacity 
+            key={nivel} 
+            style={[styles.pickerButton, risco === nivel && styles.pickerSelected]} 
+            onPress={() => setRisco(nivel)}
+          >
+            <Text style={[styles.pickerText, risco === nivel && styles.pickerTextSelected]}>
+              {nivel.toUpperCase()}
+            </Text>
           </TouchableOpacity>
         ))}
       </View>
@@ -61,7 +79,7 @@ const styles = StyleSheet.create({
   pickerSelected: { backgroundColor: "#27AE60", borderColor: "#27AE60" },
   pickerText: { fontWeight: "bold", color: "#7F8C8D" },
   pickerTextSelected: { color: "#FFF" },
-  btnSalvar: { backgroundColor: "#27AE60", paddingY: 14, borderRadius: 6, alignItems: "center", marginTop: 12, paddingVertical: 14 },
+  btnSalvar: { backgroundColor: "#27AE60", borderRadius: 6, alignItems: "center", marginTop: 12, paddingVertical: 14 },
   btnText: { color: "#FFF", fontSize: 16, fontWeight: "bold" },
   btnVoltar: { marginTop: 16, alignItems: "center" },
   btnVoltarText: { color: "#E74C3C", fontWeight: "bold" },
