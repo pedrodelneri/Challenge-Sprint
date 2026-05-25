@@ -1,43 +1,23 @@
-# Motiva Verde - Mobile App 🌿🛣️
+# 🌿 Motiva - Gestão Inteligente de Áreas Verdes Rodoviárias
 
-## 1. Definição da Solução
+Este aplicativo faz parte da entrega da **Sprint 2**. O objetivo do projeto é substituir as inspeções manuais de vegetação por um mapeamento digital inteligente que auxilia a concessionária **Motiva** a identificar pontos críticos (como mato alto e árvores caídas), priorizar podas e otimizar as operações.
 
-**Qual problema escolhemos resolver?**
-A falta de controle em tempo real e o registro ineficiente do estado da vegetação nos trechos das rodovias. Isso gera roçadas desnecessárias (desperdício de Opex) e risco de autuação pela ARTESP (vegetação acima de 30 cm).
+## 🚀 Funcionalidades (Fluxo do MVP)
+- **Lista de Ocorrências**: Exibe todos os pontos críticos de vegetação identificados por sensoriamento ou relatos de campo, classificados por nível de risco.
+- **Cadastro de Ocorrência**: Permite adicionar uma nova área identificada, especificando a rodovia, o km, o diagnóstico da vegetação e o nível de urgência.
+- **Detalhes da Ocorrência**: Exibe informações aprofundadas sobre o local selecionado para direcionar a equipe de capina/poda.
 
-**Quem é o usuário do app?**
-- Operador de Campo (Inspetor de Trecho)
-- Supervisor de Manutenção (visualização e gestão)
+## 🛠️ Tecnologias Utilizadas
+- **React Native** (via Expo Go)
+- **TypeScript** (Tipagem forte e prevenção de erros em tempo de desenvolvimento)
+- **React Hooks (`useState`)** para gerenciamento de estado dinâmico e controle de navegação.
 
-**Qual é a principal ação do app?**
-Registrar ocorrências de vegetação alta com foto e geolocalização, permitindo a classificação do risco de autuação para priorizar as equipes de roçada.
+## 📂 Dados Mockados
+Os dados simulam cenários reais encontrados em concessões de rodovias (ex: sinalização encoberta, canteiro central necessitando de roçada). Estão localizados em `src/data/mockData.ts` e alimentam dinamicamente a aplicação.
 
----
+## 💻 Como Rodar o Projeto
 
-## 2. Funcionalidades do App (MVP)
-
-Focando no essencial para validação do problema, o MVP conta com:
-* **Nova Ocorrência:** Formulário para registrar o trecho (km), foto da vegetação e altura estimada.
-* **Listagem de Ocorrências:** Feed com o histórico de registros feitos em campo, ordenados por urgência.
-* **Detalhe da Ocorrência:** Tela com as informações completas do registro (foto, data, local, responsável).
-* **Classificação de Risco:** Sistema visual de prioridade:
-    * 🟢 **Baixo:** Vegetação < 15 cm.
-    * 🟡 **Médio (Atenção):** Vegetação entre 15 cm e 24 cm.
-    * 🔴 **Alto (Crítico):** Vegetação >= 25 cm (limite de alerta para evitar os 30 cm da ARTESP).
-
----
-
-## 3. Estrutura Técnica do Projeto
-
-O projeto mobile foi estruturado visando escalabilidade e tipagem estática, preparando o terreno para a Sprint 2.
-
-**Stack Tecnológica:**
-* React Native com Expo
-* TypeScript
-
-**Arquitetura de Pastas Inicial:**
-```text
-src/
-  ├── components/  # Componentes reutilizáveis (Botões, Cards de ocorrência, Headers)
-  ├── screens/     # Telas do aplicativo (List, NewOccurrence, Details)
-  └── types/       # Definições de interfaces e tipos do TypeScript
+1. Certifique-se de ter o **Node.js** e o **Expo CLI** instalados em sua máquina.
+2. Clone o repositório:
+   ```bash
+   git clone <LINK_DO_SEU_REPOSITORIO>
